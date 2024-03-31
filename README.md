@@ -9,4 +9,9 @@ header.h has the functions of entry.c and calc.c declared
 
 main.c is the main code
 
-makefile should be run to generate the exe file for the code
+Code is written in linux OS 
+
+Use make -f makefile.mk in linux command prompt to compile the code
+
+Output file is stored in marks_report
+
