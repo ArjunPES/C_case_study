@@ -1,13 +1,13 @@
 #include<stdio.h>
 #include "header.h"
-void det_entry(char details[10][3][100], float* marks, int n)
+void det_entry(struct student *stud, int n)
 {
 	printf("\nEnter your name : ");
-	scanf("%s",details[n][0]);
+	scanf("%s",stud->name);
 	printf("\nEnter your roll number : ");
-	scanf("%s",details[n][1]);
+	scanf("%d",&stud->roll);
 	printf("\nEnter your class : ");
-	scanf("%s",details[n][2]);
+	scanf(" %c",&stud->sec);
 	char sub[3][100];
 	for (int i=0;i<3;i++)
 	{
@@ -19,9 +19,9 @@ void det_entry(char details[10][3][100], float* marks, int n)
 	{
 		for (int j=0;j<3;j++)
 		{
-			printf("\nEnter marks of %s in Test %d of %s : ",details[n][0],j+1,sub[i]);
-			scanf("%f",marks);
-			marks++;
+			printf("\nEnter marks of %s in Test %d of %s : ",stud->name,j+1,sub[i]);
+			scanf("%f",&stud->marks[i][j]);
+	
 		}
 	}
 }

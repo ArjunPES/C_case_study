@@ -1,2 +1,11 @@
-void det_entry(char details[10][3][100], float* marks,int n);
-void marks_calc(float final_marks[10],float* marks,int n);
+struct student 
+{
+	char name[50];
+	int roll;
+	char sec;
+	float marks[3][3];
+	float final_marks;
+};	
+void det_entry(struct student *stud,int n);
+void marks_calc(struct student *stud,int n);
+void stud_check(struct student *stud,int n,char *name);

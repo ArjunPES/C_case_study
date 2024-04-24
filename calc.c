@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include "header.h"
-void marks_calc(float final_marks[10],float* marks,int n)
+void marks_calc(struct student *stud,int n)
 {
 	for(int i=0;i<n;i++)
 	{
@@ -12,8 +12,7 @@ void marks_calc(float final_marks[10],float* marks,int n)
 		
 			for(int k=0;k<3;k++)
 			{
-				s=s+*marks;
-				marks++;
+				s=s+stud->marks[j][k];
 			}
 			
 			avg=s/3;
@@ -33,7 +32,8 @@ void marks_calc(float final_marks[10],float* marks,int n)
 			else
 				final=final+0;
 		}
-		final_marks[i]=final/3;
+		stud->final_marks=final/3;
+		stud++;
 	}
 }
 				
